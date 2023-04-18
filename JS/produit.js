@@ -42,19 +42,26 @@ function augmenterQuantite(id) {
     let quantity = parseInt(quantityElement.innerText);
   
     if (quantity > 0) {
-      let productName = document.querySelector('.description-product-' + counter + ' h2').innerText;
+      let productName = document.querySelector('.product-' + counter + ' .description-product-' + counter + ' h2').innerText;
   
-      // Add the product to the basket
-      basket[productName] = (basket[productName] || 0) + quantity;
+      // Send the product and quantity to the server to store in the basket
+      let xhr = new XMLHttpRequest();
+      xhr.open('POST', 'basketUpdate.php', true);
+      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+      xhr.send('product=' + encodeURIComponent(productName) + '&quantity=' + encodeURIComponent(quantity));
+  
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // Update the UI or display a message based on the server response
+          console.log(xhr.responseText);
+        }
+      };
   
       // Reset the quantity to 0
       quantityElement.innerText = 0;
-  
-      // Display the updated basket in the console
-      console.log("Updated basket:", basket);
     } else {
       alert("Please select a quantity greater than 0.");
     }
   }
-    
   
+    

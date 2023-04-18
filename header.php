@@ -2,18 +2,18 @@
 <?php
 $menuItems = [
     ["Index.php", "ACCUEIL"],
-    ["Artmatériel.php", "ART CONCRET"],
-    ["Artvirtuel.php", "ART VIRTUEL"],
-    ["CoverART.php", "COVER ART"],
+    ["produits.php?categories=ArtConcret", "ART CONCRET"],
+    ["produits.php?categories=Virtualart", "ART VIRTUEL"],
+    ["produits.php?categories=Coverart", "COVER ART"],
     ["Formulairevrai.php", "CONTACT"]
 ];
 
 if (isset($_COOKIE["user_id"])) {
   $menuItems = [
     ["Index.php", "ACCUEIL"],
-    ["Artmatériel.php", "ART CONCRET"],
-    ["Artvirtuel.php", "ART VIRTUEL"],
-    ["CoverART.php", "COVER ART"],
+    ["produits.php?categories=ArtConcret", "ART CONCRET"],
+    ["produits.php?categories=Virtualart", "ART VIRTUEL"],
+    ["produits.php?categories=Coverart", "COVER ART"],
     ["Formulairevrai.php", "CONTACT"],
     ["myAccount.php", "MON COMPTE"],
     ["#", "PANIER", "openPanier()"],
