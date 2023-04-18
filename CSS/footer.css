@@ -1,0 +1,117 @@
+html {
+	overflow-x: hidden;
+}
+
+grid {}
+
+body {
+	color: grey;
+}
+
+p,
+a {
+	font-size: 14px;
+	font-family: Garamond, serif;
+	text-decoration: none;
+	color: black;
+}
+
+h1 {
+	font-size: 57;
+}
+
+a mark:hover {
+	color: purple;
+}
+
+a:hover {
+	color: purple;
+}
+
+.grid-container {
+	font-weight: 600;
+	width: 100%;
+	display: inline-grid;
+	font-family: 'Signika', sans-serif;
+	margin: 0.2px;
+	grid-template-columns: 50% 30% 20%;
+	text-align: left;
+	align-items: first baseline;
+	background-size: 78%;
+	background-position-x: -32%;
+}
+
+.grid-itemun {
+	background-color grid-column: 1;
+	grid-row: 1;
+	text-align: 0px;
+}
+
+.grid-itemdeux {
+	background-color grid-column: 2;
+	grid-row: 1;
+	text-decoration: none;
+}
+
+.grid-itemtrois {
+	grid-column: 3;
+	grid-row: 1;
+	text-align: 20px;
+}
+
+.grid-container h6 p {
+	font-size: 18px;
+	text-transform: lowercase;
+	margin-top: 5px;
+	letter-spacing: 2px;
+	margin-right: 9
+}
+
+.grid-container .grid-itemdeux {
+	text-transform: ;
+	text-align: start;
+	text-decoration: none;
+	list-style: none;
+	margin-top: 40;
+}
+
+.grid-container .grid-itemun {
+	text-align: start;
+	list-style: none;
+}
+
+.copyright-text {
+	margin: 0;
+	font-size: small;
+	font-style: oblique;
+	color: grey;
+}
+
+.grid-itemun hr {
+	margin-top: -2%;
+	max-width: 13%;
+	margin-left: 0;
+	margin-bottom: 27px;
+}
+
+.grid-itemdeux hr {
+	margin-top: -9.5%;
+	max-width: 44%;
+	margin-left: 0;
+	margin-bottom: 34px;
+}
+
+span {
+	font-weight: bolder;
+	font-size: larger;
+}
+
+h1 {
+	text-align: end;
+	font-family: 'Signika', sans-serif;
+}
+
+footer li,
+h1 {
+	text-align: start;
+}

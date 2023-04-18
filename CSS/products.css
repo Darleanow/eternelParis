@@ -1,0 +1,363 @@
+@import url('https://fonts.cdnfonts.com/css/ds-arabic');
+
+html {
+	overflow-x: hidden;
+}
+
+.product-container {
+
+	display: grid;
+	grid-template-columns: 1Fr 25%;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+	width: 90%;
+	height: 1000;
+	gap: 10px;
+	font-family: 'DS Arabic', sans-serif;
+	font-size: 150%;
+	margin: 2px
+}
+
+
+.product-one {
+	display: flex;
+	justify-content: center;
+	grid-column: 1;
+	grid-row: 1;
+}
+
+
+.product-two {
+	display: flex;
+
+	justify-content: center;
+	grid-column: 1;
+	grid-row: 2;
+}
+
+.product-three {
+	display: flex;
+
+	justify-content: center;
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.product-four {
+	display: flex;
+
+	justify-content: center;
+	grid-column: 1;
+	grid-row: 4;
+}
+
+.product-five {
+	display: flex;
+	justify-content: center;
+	grid-column: 1;
+	grid-row: 5;
+}
+
+/* description pour chaque produit*/
+.description-product-one {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	grid-column: 2;
+	grid-row: 1;
+	text-align: center;
+	font-weight: 600;
+
+}
+
+p {
+	font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+}
+
+.description-product-two {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	grid-column: 2;
+	grid-row: 2;
+}
+
+.description-product-three {
+	display: flex;
+	flex-direction: column;
+	grid-column: 2;
+	grid-row: 3;
+}
+
+.description-product-four {
+	display: flex;
+	flex-direction: column;
+	grid-column: 2;
+	grid-row: 4;
+}
+
+.description-product-five {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	grid-column: 2;
+	grid-row: 5;
+}
+
+
+.containerun {
+	width: 300px;
+	height: 400px;
+	background: url(IMAGE/hommeoiseau.jpeg);
+	background-color: black;
+	background-size: cover;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.containerdeux {
+	width: 300px;
+	height: 400px;
+	background: url(IMAGE/redman.jpeg);
+	background-color: black;
+	background-size: cover;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.containertrois {
+	width: 300px;
+	height: 400px;
+	background: url(IMAGE/LeeMerrionHarret.jpg);
+	background-color: black;
+	background-size: cover;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+
+}
+
+
+.containerquatre {
+	width: 300px;
+	height: 400px;
+	background: url(hommeoiseau.jpeg);
+	background-color: black;
+	background-size: cover;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.containercinq {
+	width: 300px;
+	height: 400px;
+	background: url(hommeoiseau.jpeg);
+	background-color: black;
+	background-size: cover;
+	cursor: pointer;
+	-webkit-box-shadow: 0 0 5px #000;
+	box-shadow: 0 0 5px #000;
+}
+
+.overlay {
+	width: 100%;
+	height: 100%;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 2fr 2fr 1fr;
+	background: rgba(77, 77, 77, 0.9);
+	color: #FEF5DF;
+	opacity: 0;
+	transition: all 0.5s;
+	font-family: 'DS Arabic', sans-serif;
+	font-size: xx-large;
+}
+
+.items {
+	padding-left: 20px;
+	letter-spacing: 3px;
+}
+
+.head {
+	font-size: 30px;
+	line-height: 40px;
+	transform: translateY(40px);
+	transition: all 0.7s;
+}
+
+.head hr {
+	display: block;
+	width: 0;
+	border: none;
+	border-bottom: solid 2px #FEF5DF;
+	position: absolute;
+	bottom: 0;
+	left: 20px;
+	transition: all 0.5s;
+}
+
+.price {
+	font-size: 25px;
+	line-height: 10px;
+	font-weight: bold;
+	opacity: 0;
+	transform: translateY(40px);
+	transition: all 0.7s;
+}
+
+.price .old {
+
+	color: #b3b3b3;
+}
+
+.cart {
+	font-size: 12px;
+	opacity: 0;
+	letter-spacing: 1px;
+	font-family: 'Lato', sans-serif;
+	transform: translateY(40px);
+	transition: all 0.7s;
+}
+
+.cart i {
+	font-size: 16px;
+}
+
+.cart span {
+	margin-left: 10px;
+}
+
+.bigcontainer:hover .overlay {
+	opacity: 1;
+}
+
+.bigcontainer:hover .overlay .head {
+	transform: translateY(0px);
+}
+
+.bigcontainer:hover .overlay hr {
+	width: 75px;
+	transition-delay: 0.4s;
+}
+
+.bigcontainer:hover .overlay .price {
+	transform: translateY(0px);
+	transition-delay: 0.3s;
+	opacity: 1;
+}
+
+.bigcontainer:hover .overlay .cart {
+	transform: translateY(0px);
+	transition-delay: 0.6s;
+	opacity: 1;
+}
+
+
+/*footer*/
+
+.grid-container {
+	display: grid;
+	font-weight: 600;
+	width: 100%;
+	display: inline-grid;
+	font-family: 'Signika', sans-serif;
+	margin: 0.2px;
+	grid-template-columns: 50% 30% 20%;
+	text-align: left;
+	align-items: first baseline;
+	background-size: 78%;
+	background-position-x: -32%;
+	background-image: url(elephant.jpeg)
+}
+
+.grid-itemun {
+	grid-column: 1;
+	grid-row: 1;
+	text-align: 0px;
+
+}
+
+.grid-itemdeux {
+
+	grid-column: 2;
+	grid-row: 1;
+	text-decoration: none;
+
+
+}
+
+.grid-itemtrois {
+	grid-column: 3;
+	grid-row: 1;
+	text-align: 20px;
+}
+
+.grid-container h6 p {
+
+	font-size: 18px;
+	text-transform: lowercase;
+	margin-top: 5px;
+	letter-spacing: 2px;
+	margin-right: 9
+}
+
+.grid-container .grid-itemdeux {
+	text-align: start;
+	text-decoration: none;
+	list-style: none;
+	margin-top: 40;
+}
+
+.grid-container .grid-itemun {
+	text-align: start;
+	list-style: none;
+
+}
+
+.copyright-text {
+	margin: 0;
+	font-size: small;
+	font-style: oblique;
+	color: grey;
+}
+
+.grid-itemun hr {
+	margin-top: -2%;
+	max-width: 13%;
+	margin-left: 0;
+	margin-bottom: 27px;
+}
+
+.grid-itemdeux hr {
+	margin-top: -9.5%;
+	max-width: 44%;
+	margin-left: 0;
+	margin-bottom: 34px;
+}
+
+span {
+	font-weight: bolder;
+	font-size: larger;
+}
+
+
+h1 {
+	text-align: end;
+	font-family: 'Signika', sans-serif;
+}
+
+footer li,
+h1 {
+	text-align: start;
+}
+
+p a {
+
+	font-size: 14px;
+	font-family: Garamond, serif;
+	text-decoration: none;
+
+
+}
