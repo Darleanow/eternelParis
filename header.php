@@ -2,7 +2,11 @@
 <link rel="stylesheet" href="CSS/basket.css">
 
 <script>
+  <?php if (isset($_COOKIE['user_email'])): ?>
   const userEmail = <?php echo json_encode($_COOKIE['user_email']); ?>;
+  <?php else: ?>
+  const userEmail = null;
+  <?php endif; ?>
   const products = <?php echo json_encode($_SESSION['categories'][$category]); ?>;
 </script>
 <?php
