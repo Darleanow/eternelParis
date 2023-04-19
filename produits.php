@@ -12,6 +12,8 @@
     echo '<link rel="stylesheet" href="./CSS/Artvirtuel.css">';
   }
 ?>
+
+
 <html>
   <div class="grid-container">
   <head>
@@ -59,7 +61,7 @@
               // Loop through the products in the specified category and display them
               foreach ($_SESSION['categories'][$category] as $product)
               {
-                  echo ' <div class="product-' . $numberWordsEn[$counter] . '">';
+                  echo ' <div class="product-' . $numberWordsEn[$counter] . '" data-product-index="' . $counter . '">';
                   echo ' <div class="bigcontainer">';
                   echo ' <div class="container' . $numberWords[$counter] . '">';
                   echo ' <div class="overlay">';

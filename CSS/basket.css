@@ -1,0 +1,40 @@
+.basket-items {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .basket-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-name,
+  .item-quantity,
+  .item-price {
+    flex: 1;
+    text-align: center;
+  }
+
+  
+  .basket-header {
+    font-weight: bold;
+  }
+  
+  .item-name,
+  .item-quantity,
+  .item-price,
+  .item-remove {
+    flex: 1;
+    text-align: center;
+  }
+  
+  .remove-dialog {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding-top: 5px;
+  }

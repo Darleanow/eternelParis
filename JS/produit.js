@@ -25,6 +25,7 @@ function augmenterQuantite(id) {
 
     }
   }
+
   /* La troisième fonction, toggleVisibility(n), permet de basculer la visibilité d'un élément HTML en modifiant sa propriété CSS display */
   function toggleVisibility(n) {
     var element = document.getElementById("d"+n);
@@ -35,33 +36,42 @@ function augmenterQuantite(id) {
     }
   }
   
-  let basket = {};
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.grid-container .product-container > div').forEach((productDiv) => {
+      const productIndex = productDiv.getAttribute('data-product-index');
+      const product = products[productIndex];
+      const imgElement = productDiv.querySelector('img');
+      if (imgElement && product.image) {
+        imgElement.src = product.image;
+      }
+    });
+  });
 
-  function addToBasket(counter) {
-    let quantityElement = document.getElementById('quantite' + counter);
-    let quantity = parseInt(quantityElement.innerText);
+  function addToBasket(index) {
+    let email = userEmail; // Get the user's email from the variable
+    let product = products; // Get the list of products in the current category
   
-    if (quantity > 0) {
-      let productName = document.querySelector('.product-' + counter + ' .description-product-' + counter + ' h2').innerText;
+    let basket = JSON.parse(localStorage.getItem("basket")) || {}; // Retrieve the basket from localStorage or create a new one
+    let item = product[index];
+    let quantity = parseInt(document.getElementById("quantite" + index).textContent, 10);
   
-      // Send the product and quantity to the server to store in the basket
-      let xhr = new XMLHttpRequest();
-      xhr.open('POST', 'basketUpdate.php', true);
-      xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-      xhr.send('product=' + encodeURIComponent(productName) + '&quantity=' + encodeURIComponent(quantity));
-  
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          // Update the UI or display a message based on the server response
-          console.log(xhr.responseText);
-        }
-      };
-  
-      // Reset the quantity to 0
-      quantityElement.innerText = 0;
-    } else {
-      alert("Please select a quantity greater than 0.");
+    if (!basket[email]) {
+      basket[email] = [];
     }
+  
+    let existingItem = basket[email].find((i) => i.id === item.id);
+  
+    if (existingItem) {
+      existingItem.quantity += quantity;
+    } else {
+      basket[email].push({
+        id: item.id,
+        name: item.name,
+        price: item.price,
+        quantity: quantity,
+      });
+    }
+  
+    localStorage.setItem("basket", JSON.stringify(basket)); // Save the basket back to localStorage
   }
   
-    

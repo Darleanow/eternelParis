@@ -1,4 +1,10 @@
 <link rel="stylesheet" href="CSS/basketLogoutProps.css">
+<link rel="stylesheet" href="CSS/basket.css">
+
+<script>
+  const userEmail = <?php echo json_encode($_COOKIE['user_email']); ?>;
+  const products = <?php echo json_encode($_SESSION['categories'][$category]); ?>;
+</script>
 <?php
 $menuItems = [
     ["Index.php", "ACCUEIL"],
